@@ -3,12 +3,13 @@ import os
 from flask import Flask, jsonify, request
 from pymongo import MongoClient
 
-user = os.environ.get('USER')
-pw = int(os.environ.get('PW'))
-server = os.environ.get('SV')
-tb1 = os.environ.get("tb1")
-tb2 = os.environ.get("tb2")
-tb3 = os.environ.get("tb3")
+user = str(os.environ.get('USER'))
+pw = str(os.environ.get('PW'))
+server = str(os.environ.get('SV'))
+tb1 = str(os.environ.get("tb1"))
+tb2 = str(os.environ.get("tb2"))
+tb3 = str(os.environ.get("tb3"))
+
 client = MongoClient("mongodb+srv://"+user+":"+pw+"@"+server)
 db = client["tb3"]
 partidos = db["tb1"]
